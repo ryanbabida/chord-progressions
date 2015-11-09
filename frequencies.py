@@ -1,5 +1,10 @@
 import pyaudio
 
+# Assigns the notes / octave number to a frequency in the notes dict
+# Uses the frequency formula
+# If the note is B, add 1 to the octave number to get the
+# next octave's notes (eg. B0 --> C1)
+
 def storing_Freq(notes, notes_octave):
   octave_num = 0;
 
