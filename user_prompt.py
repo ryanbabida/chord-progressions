@@ -7,12 +7,12 @@ def menu():
   choice = int(input())
   return choice
 
-def scales():
+def scales_prompt():
   print "For the scale, choose the desired key: "
   choice = raw_input()
   return choice
 
-def progressions():
+def progressions_prompt():
   choices = list()
 
   print "For the progression, choose the desired key: "
