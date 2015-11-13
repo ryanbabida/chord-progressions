@@ -8,9 +8,15 @@ def menu():
   return choice
 
 def scales_prompt():
+  choices = list()
+
   print "For the scale, choose the desired key: "
-  choice = raw_input()
-  return choice
+  choices.append(raw_input())
+
+  print "1. Major Scale"
+  print "2. Natural Minor Scale"
+  choices.append(int(raw_input()))
+  return choices
 
 def progressions_prompt():
   choices = list()
@@ -21,6 +27,12 @@ def progressions_prompt():
   print "For the progression, type the progression: "
   choices.append(raw_input())
   return choices
+
+def display_result(result):
+  print "Result: "
+  for x in result:
+    print x.note_name,
+  print "\n"
 
 
 
