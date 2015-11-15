@@ -37,8 +37,8 @@ def main():
   	  display_result(scale)
 
     if choice == 2:
-      chord_choice = chords_prompt()
-      # chord = getChord(notes, frequencies, chord_choice)
+      chord_choices = chords_prompt()
+      chord = getChord(notes, frequencies, chord_choices)
       display_result(chord)
 
     if choice == 3:

@@ -2,7 +2,8 @@ def menu():
   print "Welcome to Chord Progressions"
   print "Choose one:"
   print "1. Scales"
-  print "2. Progressions"
+  print "2. Chords"
+  print "3. Progressions"
   print "0. Quit"
   choice = int(input())
   return choice
@@ -19,7 +20,7 @@ def scales_prompt():
   return choices
 
 def chords_prompt():
-  print "Enter the desired chord (eg. Cm7): "
+  print "Enter the desired chord (eg. Cm7 -> C4 Minor 7): "
   return (raw_input())
 
 def progressions_prompt():
