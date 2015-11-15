@@ -14,6 +14,9 @@ _3rd = 4
 _5th = 7
 _m7th = 10
 _7th = 11
+_9th = 14 
+_11th = 17
+_13th = 21
 
 
 def main():
@@ -34,6 +37,11 @@ def main():
   	  display_result(scale)
 
     if choice == 2:
+      chord_choice = chords_prompt()
+      # chord = getChord(notes, frequencies, chord_choice)
+      display_result(chord)
+
+    if choice == 3:
   	  prog_choices = progressions_prompt()
   	  progression = parseProg(prog_choices)
   	  get_Prog(notes, frequencies, prog_choices[0], progression)

@@ -18,6 +18,10 @@ def scales_prompt():
   choices.append(int(raw_input()))
   return choices
 
+def chords_prompt():
+  print "Enter the desired chord (eg. Cm7): "
+  return (raw_input())
+
 def progressions_prompt():
   choices = list()
 
