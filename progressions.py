@@ -1,3 +1,5 @@
+from scales import *
+
 def hasOctaveNum(inputString):
   return any(char.isdigit() for char in inputString)
 
@@ -38,25 +40,45 @@ def parseProg(prog_choices):
   progression = list()
   parsed_prog = list()
 
-  if hasOctaveNum(prog_choices[0]) == False:
-  	prog_choices[0] += '4'
 
-  roman_num = [["I": 1, "Major"], ["i": 1, "Minor"], 
-               ["II": 2, "Major"], ["ii": 1, "Minor"],
-               ["III": 3, "Major"], ["iii": 3, "Minor"],
-               ["IV": 4, "Major"], ["iv": 4, "Minor"],
-               ["V": 5, "Major"], ["v": 5, "Minor"], 
-               ["VI": 6, "Major"], ["vi": 6, "Minor"],
-               ["VII": 7, "Major"], ["vii": 7, "Minor"]]
+  roman_num = {"I": 1, "i": 1, 
+               "II": 2, "ii": 2,
+               "III": 3, "iii": 3,
+               "IV": 4, "iv": 4,
+               "V": 5, "v": 5, 
+               "VI": 6, "vi": 6,
+               "VII": 7, "vii": 7}
 
   progression = prog_choices[1].split()
-  '''
-  for x in range (0, len(progression)):
-     parsed_prog.append(roman_num[progression[x]])
-    '''
-  print roman_num
 
-  return progression
+  for x in progression:
+    if x.islower() == True:
+      parsed_prog.append((roman_num[x] - 1, "Minor"))
+    if x.isupper() == True:
+      parsed_prog.append((roman_num[x] - 1, "Major"))
+
+  return parsed_prog
 
 def get_Prog(notes, frequencies, key, progression):
-  print ""
+
+  final_prog = list()
+
+  if hasOctaveNum(key) == False:
+    key += '4'
+ 
+  scales_choices = [key, 1]
+  scale = getScale(notes, frequencies, scales_choices)
+
+  for x in progression:
+    chord_choices = scale[x[0]].note_name + ' ' + x[1] + ' 0'
+
+    chord = getChord(notes, frequencies, chord_choices)
+    final_prog.append(chord)
+
+  return final_prog
+
+
+
+
+
+

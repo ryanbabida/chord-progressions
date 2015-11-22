@@ -23,7 +23,7 @@ def main():
   frequencies = list()
   notes = dict()
   notes_octave = ['A', 'A#/Bb', 'B', 'C', 'C#/Db', 'D', 
-  				 'D#/Eb', 'E', 'F', 'F#/Gb', 'G', 'G#/Ab']
+           'D#/Eb', 'E', 'F', 'F#/Gb', 'G', 'G#/Ab']
   choice = -1
 
   storing_Freq(frequencies, notes, notes_octave)
@@ -32,9 +32,9 @@ def main():
     choice = menu()
 
     if choice == 1:
-  	  scales_choices = scales_prompt()
-  	  scale = getScale(notes, frequencies, scales_choices)
-  	  display_result(scale)
+      scales_choices = scales_prompt()
+      scale = getScale(notes, frequencies, scales_choices)
+      display_result(scale)
 
     elif choice == 2:
       chord_choices = chords_prompt()
@@ -42,10 +42,13 @@ def main():
       display_result(chord)
 
     elif choice == 3:
-  	  prog_choices = progressions_prompt()
-  	  progression = parseProg(prog_choices)
-  	  get_Prog(notes, frequencies, prog_choices[0], progression)
+      prog_choices = progressions_prompt()
+      progression = parseProg(prog_choices)
+      final_prog = get_Prog(notes, frequencies, prog_choices[0], progression)   
+      display_prog(final_prog)
 
-   
+
+
+
 if __name__ == '__main__':
     main()

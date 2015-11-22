@@ -9,7 +9,7 @@ def getScale(notes, frequencies, scales_choices):
   	scales_choices[0] += '4'
 
   root = notes[scales_choices[0]]
-  
+
   scale = list()
 
   if scales_choices[1] == 1:

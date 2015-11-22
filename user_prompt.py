@@ -39,5 +39,14 @@ def display_result(result):
     print x.note_name,
   print "\n"
 
+def display_prog(result):
+  print "Result: "
+  for x in result:
+    print "Root note:", x[0].note_name, "\nChord:"
+    for y in x:
+      print y.note_name,
+    print "\n"
+
+
 
 
