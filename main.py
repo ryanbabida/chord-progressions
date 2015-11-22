@@ -36,15 +36,16 @@ def main():
   	  scale = getScale(notes, frequencies, scales_choices)
   	  display_result(scale)
 
-    if choice == 2:
+    elif choice == 2:
       chord_choices = chords_prompt()
       chord = getChord(notes, frequencies, chord_choices)
       display_result(chord)
 
-    if choice == 3:
+    elif choice == 3:
   	  prog_choices = progressions_prompt()
   	  progression = parseProg(prog_choices)
   	  get_Prog(notes, frequencies, prog_choices[0], progression)
+
    
 if __name__ == '__main__':
     main()

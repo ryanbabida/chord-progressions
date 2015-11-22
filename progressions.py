@@ -8,7 +8,7 @@ def getChord(notes, frequencies, chord_choices):
 
   if hasOctaveNum(chord_choices[0]) == False:
   	chord_choices[0] += '4'
-  	
+
   root = notes[chord_choices[0]]
 
   if chord_choices[1] == "Major":
@@ -36,11 +36,25 @@ def getChord(notes, frequencies, chord_choices):
 # defaults to octave 4 (eg. C -> C4)
 def parseProg(prog_choices):
   progression = list()
+  parsed_prog = list()
 
   if hasOctaveNum(prog_choices[0]) == False:
   	prog_choices[0] += '4'
 
+  roman_num = [["I": 1, "Major"], ["i": 1, "Minor"], 
+               ["II": 2, "Major"], ["ii": 1, "Minor"],
+               ["III": 3, "Major"], ["iii": 3, "Minor"],
+               ["IV": 4, "Major"], ["iv": 4, "Minor"],
+               ["V": 5, "Major"], ["v": 5, "Minor"], 
+               ["VI": 6, "Major"], ["vi": 6, "Minor"],
+               ["VII": 7, "Major"], ["vii": 7, "Minor"]]
+
   progression = prog_choices[1].split()
+  '''
+  for x in range (0, len(progression)):
+     parsed_prog.append(roman_num[progression[x]])
+    '''
+  print roman_num
 
   return progression
 
